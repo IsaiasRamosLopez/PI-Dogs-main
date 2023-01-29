@@ -1,0 +1,60 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	gap: 15px;
+}
+
+.container__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "textfonttt", sans-serif;
+	width: 1.8rem;
+	position: relative;
+	cursor: pointer;
+	height: 1.8rem;
+	border-radius: 50%;
+	border: none;
+	background: rgb(48, 46, 46);
+	color: #e5e5e5;
+	font-weight: 600;
+	font-size: 13px;
+}
+.container .container__button[disabled] {
+	background-color: #4b4949;
+	cursor: no-drop;
+}
+.container p {
+	font-family: "MontserratRegular", sans-serif;
+}
+
+.container input {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	border: none;
+	font-family: "MontserratRegular", sans-serif;
+	font-size: 16px;
+	background-color: transparent;
+	outline: none;
+	padding-left: 12px;
+}
+.container input:hover {
+	border: none;
+	border-radius: 50%;
+	background-color: rgba(16, 100, 100, 0.123);
+	outline: none;
+}
+.container input:hover:before {
+	outline: none;
+	border: none;
+}
+.container input:active {
+	border: none;
+	outline: none;
+	background-color: rgba(6, 158, 158, 0.555);
+}
