@@ -55,8 +55,8 @@ const getDbInfo = async () => {
 const getAllDogs = async () => {
 	const apiInfo = await getApiInfo();
 	const dbInfo = await getDbInfo();
-	return apiInfo
-		.map((dog) => {
+	return dbInfo.concat(
+		apiInfo.map((dog) => {
 			if (
 				(!dog.weight_min && !dog.weight_max) ||
 				(isNaN(dog.weight_min) && isNaN(dog.weight_max))
@@ -97,7 +97,7 @@ const getAllDogs = async () => {
 			}
 			return dog;
 		})
-		.concat(dbInfo);
+	);
 };
 
 module.exports = { getAllDogs };

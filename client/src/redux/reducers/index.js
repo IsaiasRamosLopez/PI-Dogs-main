@@ -1,20 +1,22 @@
 /* Importing the types from the types.js file. */
 import {
-	GET_ALL_DOGS,
-	GET_NAME,
-	GET_TEMPERAMENTS,
-	GET_FILTER_TEMP,
-	GET_FILTER_DATA,
-	ORDER_NAME,
-	ORDER_WEIGHT,
-	DETAIL_TARGET,
+  GET_ALL_DOGS,
+  GET_NAME,
+  GET_TEMPERAMENTS,
+  GET_FILTER_TEMP,
+  GET_FILTER_DATA,
+  ORDER_NAME,
+  ORDER_WEIGHT,
+  DETAIL_TARGET,
+  DELETE_DATA,
+  UPDATE_DATA,
 } from "../types";
 
 /* Setting the initial state of the application. */
 const initialState = {
-	dogs: [],
-	temperaments: [],
-	target: {},
+  dogs: [],
+  temperaments: [],
+  target: {},
 };
 
 /**
@@ -24,58 +26,69 @@ const initialState = {
  * @returns The state is being returned.
  */
 const rootReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case GET_ALL_DOGS:
-			return {
-				...state,
-				dogs: action.payload,
-			};
+  switch (action.type) {
+    case GET_ALL_DOGS:
+      return {
+        ...state,
+        dogs: action.payload,
+      };
 
-		case GET_NAME:
-			return {
-				...state,
-				dogs: action.payload,
-			};
+    case GET_NAME:
+      return {
+        ...state,
+        dogs: action.payload,
+      };
 
-		case GET_TEMPERAMENTS:
-			return {
-				...state,
-				temperaments: action.payload,
-			};
+    case GET_TEMPERAMENTS:
+      return {
+        ...state,
+        temperaments: action.payload,
+      };
 
-		case GET_FILTER_DATA:
-			return {
-				...state,
-				dogs: action.payload,
-			};
+    case GET_FILTER_DATA:
+      return {
+        ...state,
+        dogs: action.payload,
+      };
 
-		case GET_FILTER_TEMP:
-			return {
-				...state,
-				dogs: action.payload,
-			};
+    case GET_FILTER_TEMP:
+      return {
+        ...state,
+        dogs: action.payload,
+      };
 
-		case ORDER_NAME:
-			return {
-				...state,
-				dogs: action.payload,
-			};
+    case ORDER_NAME:
+      return {
+        ...state,
+        dogs: action.payload,
+      };
 
-		case ORDER_WEIGHT:
-			return {
-				...state,
-				dogs: action.payload,
-			};
+    case ORDER_WEIGHT:
+      return {
+        ...state,
+        dogs: action.payload,
+      };
 
-		case DETAIL_TARGET:
-			return {
-				...state,
-				target: action.payload,
-			};
+    case DETAIL_TARGET:
+      return {
+        ...state,
+        target: action.payload,
+      };
 
-		default:
-			return state;
-	}
+    case UPDATE_DATA:
+      return {
+        ...state,
+        data: action.payload,
+      };
+
+    case DELETE_DATA:
+      return {
+        ...state,
+        dogs: state.dogs.filter((dog) => dog.id !== action.payload.id),
+      };
+
+    default:
+      return state;
+  }
 };
-
 export default rootReducer;

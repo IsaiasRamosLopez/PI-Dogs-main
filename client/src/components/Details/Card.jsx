@@ -3,14 +3,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 /** Import styles */
 import css from "./Card.module.css";
-
 const Card = ({ id, image, name, temperaments, weight_min, weight_max }) => {
 	const weight = `${weight_min} - ${weight_max} Kg`;
 	return (
 		<div className={css.card}>
 			<div className={css.top_card}>
 				<div className={css.img}>
-					<Link to={`/dogs/${id}`}>
+					<Link to={`/dogs/details/${id}`}>
 						<img
 							className={css.image}
 							src={image}
@@ -32,7 +31,6 @@ const Card = ({ id, image, name, temperaments, weight_min, weight_max }) => {
 					</p>
 				</h2>
 			</div>
-
 			<div className={css.bottom_card}>
 				<div className={css.temperaments}>
 					<p
@@ -52,5 +50,4 @@ const Card = ({ id, image, name, temperaments, weight_min, weight_max }) => {
 		</div>
 	);
 };
-
 export default Card;
