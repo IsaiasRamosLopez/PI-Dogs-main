@@ -71,9 +71,9 @@ const getAllDogs = async () => {
 				isNaN(dog.weight_max)
 			) {
 				if (!dog.weight_min || isNaN(dog.weight_min)) {
-					dog.weight_min = (Number(dog.weight_max) - 3.22).toString();
+					dog.weight_min = (Number(dog.weight_max) - 3.22).toFixed(2).toString();
 				} else {
-					dog.weight_max = (Number(dog.weight_min) + 3.22).toString();
+					dog.weight_max = (Number(dog.weight_min) + 3.22).toFixed(2).toString();
 				}
 			}
 			if (
