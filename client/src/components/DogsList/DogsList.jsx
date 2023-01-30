@@ -18,6 +18,7 @@ import image from "../../assets/images/DogList.png";
 import LoaderImg from "../Loaders/LoaderImg";
 /** Import styles */
 import css from "./DogsList.module.css";
+import DontData from "./DontData";
 const DogsList = () => {
   const dispatch = useDispatch();
   const allData = useSelector((state) => state.dogs);
@@ -140,18 +141,22 @@ const DogsList = () => {
             <Paged pagina={pagina} setPagina={setPagina} maximo={maximo} />
           </div>
           <div className={css.right}>
-            {currentDogs?.map(
-              ({ id, name, image, temperaments, weight_min, weight_max }) => (
-                <Card
-                  key={id}
-                  id={id}
-                  name={name}
-                  image={image}
-                  temperaments={temperaments}
-                  weight_min={weight_min}
-                  weight_max={weight_max}
-                />
+            {currentDogs.length ? (
+              currentDogs.map(
+                ({ id, name, image, temperaments, weight_min, weight_max }) => (
+                  <Card
+                    key={id}
+                    id={id}
+                    name={name}
+                    image={image}
+                    temperaments={temperaments}
+                    weight_min={weight_min}
+                    weight_max={weight_max}
+                  />
+                )
               )
+            ) : (
+              <DontData/>
             )}
           </div>
         </div>

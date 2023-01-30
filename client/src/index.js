@@ -11,8 +11,8 @@ import store from "./redux/store/index";
 import "./index.css";
 
 /** Port configuration for axios */
-//axios.defaults.baseURL = "https://pi-dogs-main-production-4751.up.railway.app/";
-axios.defaults.baseURL = "http://localhost:3001";
+//axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://pi-dogs-main-production-4751.up.railway.app/";
 
 ReactDOM.render(
 	<Provider store={store}>
